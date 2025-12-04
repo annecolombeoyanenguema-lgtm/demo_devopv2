@@ -16,9 +16,9 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.0.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./                  # tout le contenu du repo
-          server-dir: /www/mon-site/     # ← slash final obligatoire
-          dry-run: false
+          server: ${{ secrets.FTP_SERVER }}      # ftpupload.net
+          username: ${{ secrets.FTP_USERNAME }}  # epiz_XXXXXX
+          password: ${{ secrets.FTP_PASSWORD }}  # mot de passe FTP
+          local-dir: ./                         # Tout le contenu de ton repo
+          server-dir: /htdocs/                  # ← Chemin correct pour InfinityFree (avec slash final)
+          dry-run: false                        # Change à true pour tester sans upload réel
